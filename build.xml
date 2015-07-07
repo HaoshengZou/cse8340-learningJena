@@ -38,6 +38,7 @@
 
     <target name="clean">
         <delete dir="${build.dir}" />
+        <delete dir="${jar.dir}" />
     </target>
 
     <target name="compile">
@@ -59,6 +60,10 @@
                 <attribute name="Class-Path" value="${manifest.classpath}" />
             </manifest>
         </jar>
+        <mkdir dir="${jar.dir}/lib" />
+        <copy todir="${jar.dir}/lib" flatten="true">
+            <path refid="build.classpath" />
+        </copy>
     </target>
 
     <target name="run" depends="build">
