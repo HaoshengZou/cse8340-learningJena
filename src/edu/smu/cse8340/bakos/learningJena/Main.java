@@ -17,6 +17,21 @@ public class Main {
 
     private final static String ONTOLOGY_URL = "http://lyle.smu.edu/~ybakos/cse8340/a4/foafonto.ttl";
     private final static String DATA_URL = "http://lyle.smu.edu/~ybakos/cse8340/a4/foafdata.ttl";
+    private final static String[] CLASS_MEMBER_URLS = {
+        "http://lyle.smu.edu/~lincolns/cse8340/a4/foafdata.ttl",
+        "http://lyle.smu.edu/~stekula/cse8340/foafdata.ttl",
+        "http://lyle.smu.edu/~shanka/cse8340/a4/foafdata.ttl",
+        "http://lyle.smu.edu/~smaradi/cse8340/a4/foafdata.ttl",
+        "http://lyle.smu.edu/~mingruic/cse8340/foafdata.ttl",
+        "http://lyle.smu.edu/~rmandhare/cse8340/a4/foafdata.ttl",
+        "https://lyle.smu.edu/~sthathapudi/cse8340/a4/foafdata.ttl",
+        "http://lyle.smu.edu/~huij/cse8340/a4/foafdata.ttl",
+        "http://lyle.smu.edu/~zhaoc/cse8340/a4/foafdata.TTL",
+        "http://lyle.smu.edu/~tfedorov/cse8340/a4/foafdata.ttl",
+        "http://lyle.smu.edu/~stekula/cse8340/a4/foafdata.ttl",
+        "http://lyle.smu.edu/~mjhaveri/cse8340/a4/foafdata.ttl"
+    };
+
     private final static String RDF_SYNTAX = "N3";
 
     public static void main(String[] args) {
