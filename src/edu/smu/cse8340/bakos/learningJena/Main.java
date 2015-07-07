@@ -53,6 +53,44 @@ public class Main {
             "?x foaf:knows ?someone\n" +
         "}";
 
+    private final static String DESCRIBE_QUERY =
+        "BASE <http://lyle.smu.edu/cse8340#>\n" + 
+        "PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+        "PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>\n" +
+        "PREFIX foaf:     <http://xmlns.com/foaf/spec/>\n" +
+        "PREFIX frbr:     <http://purl.org/vocab/frbr/core#>\n" +
+        "PREFIX dc:       <http://purl.org/dc/elements/1.1/>\n" +
+        "PREFIX film:     <http://data.linkedmdb.org/page/movie/film/>\n" +
+        "PREFIX actor:    <http://data.linkedmdb.org/resource/actor/>\n" +
+        "PREFIX rel:      <http://purl.org/vocab/relationship/>\n" +
+        "PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>\n" +
+        "PREFIX owl:      <http://www.w3.org/2002/07/owl#>\n" +
+        "PREFIX dbpedia:  <http://dbpedia.org/ontology#>\n" +
+        "PREFIX :         <#>\n" +
+        "DESCRIBE ?x\n" +
+        "WHERE {\n" +
+            ":yongb foaf:knows ?x\n" +
+        "}";
+
+    private final static String CONSTRUCT_QUERY =
+        "BASE <http://lyle.smu.edu/cse8340#>\n" + 
+        "PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+        "PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>\n" +
+        "PREFIX foaf:     <http://xmlns.com/foaf/spec/>\n" +
+        "PREFIX frbr:     <http://purl.org/vocab/frbr/core#>\n" +
+        "PREFIX dc:       <http://purl.org/dc/elements/1.1/>\n" +
+        "PREFIX film:     <http://data.linkedmdb.org/page/movie/film/>\n" +
+        "PREFIX actor:    <http://data.linkedmdb.org/resource/actor/>\n" +
+        "PREFIX rel:      <http://purl.org/vocab/relationship/>\n" +
+        "PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>\n" +
+        "PREFIX owl:      <http://www.w3.org/2002/07/owl#>\n" +
+        "PREFIX dbpedia:  <http://dbpedia.org/ontology#>\n" +
+        "PREFIX :         <#>\n" +
+        "CONSTRUCT { :yongb foaf:knows ?person }\n" +
+        "WHERE {\n" +
+        "OPTIONAL { ?person foaf:name ?name }\n" +
+        "}";
+
 
     public static void main(String[] args) {
         Model dataModel = ModelFactory.createDefaultModel();
@@ -64,16 +102,33 @@ public class Main {
         reasoner = reasoner.bindSchema(schema);
         InfModel inferenceModel = ModelFactory.createInfModel(reasoner, dataModel);
         //inferenceModel.write(System.out, RDF_SYNTAX);
-        System.out.println("6. OWL Inferencing of foaf:knows symmetry.\n");
-        System.out.println(SYMMETRY_QUERY);
-        Query query = QueryFactory.create(SYMMETRY_QUERY);
-        QueryExecution qe = QueryExecutionFactory.create(query, inferenceModel);
-        ResultSet rs = qe.execSelect();
-        System.out.println("Result:");
-        while (rs.hasNext()) {
-            QuerySolution qs = rs.next();
-            System.out.println(qs);
-        }
+        // System.out.println("6. OWL Inferencing of foaf:knows symmetry.\n");
+        // System.out.println(SYMMETRY_QUERY);
+        // Query query = QueryFactory.create(SYMMETRY_QUERY);
+        // QueryExecution qe = QueryExecutionFactory.create(query, inferenceModel);
+        // ResultSet rs = qe.execSelect();
+        // System.out.println("Result:");
+        // while (rs.hasNext()) {
+        //     QuerySolution qs = rs.next();
+        //     System.out.println(qs);
+        // }
+
+        // System.out.println("7. DESCRIBING everyone :yongb foaf:knows.\n");
+        // System.out.println(DESCRIBE_QUERY);
+        // Query query = QueryFactory.create(DESCRIBE_QUERY);
+        // QueryExecution qe = QueryExecutionFactory.create(query, inferenceModel);
+        // Model m = qe.execDescribe();
+        // System.out.println("Result:");
+        // m.write(System.out, RDF_SYNTAX);
+
+        // System.out.println("8. CONSTRUCTing the foaf:name of everyone :yongb foaf:knows.\n");
+        // System.out.println(CONSTRUCT_QUERY);
+        // Query query = QueryFactory.create(CONSTRUCT_QUERY);
+        // QueryExecution qe = QueryExecutionFactory.create(query, inferenceModel);
+        // Model m = qe.execConstruct();
+        // System.out.println("Result:");
+        // m.write(System.out, RDF_SYNTAX);
+
     }
 
 }
