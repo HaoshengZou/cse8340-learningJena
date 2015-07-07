@@ -13,6 +13,10 @@ import com.hp.hpl.jena.query.*;
 import com.hp.hpl.jena.rdf.model.*; 
 import com.hp.hpl.jena.reasoner.*; 
 import com.hp.hpl.jena.util.*;
+import org.apache.jena.atlas.*;
+import org.apache.jena.atlas.web.*;
+import org.apache.jena.riot.*;
+
 
 public class Main {
 
@@ -91,10 +95,40 @@ public class Main {
         "OPTIONAL { ?person foaf:name ?name }\n" +
         "}";
 
+    private final static String INTEGRATION_QUERY =
+        "BASE <http://lyle.smu.edu/cse8340#>\n" + 
+        "PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+        "PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>\n" +
+        "PREFIX foaf:     <http://xmlns.com/foaf/spec/>\n" +
+        "PREFIX frbr:     <http://purl.org/vocab/frbr/core#>\n" +
+        "PREFIX dc:       <http://purl.org/dc/elements/1.1/>\n" +
+        "PREFIX film:     <http://data.linkedmdb.org/page/movie/film/>\n" +
+        "PREFIX actor:    <http://data.linkedmdb.org/resource/actor/>\n" +
+        "PREFIX rel:      <http://purl.org/vocab/relationship/>\n" +
+        "PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>\n" +
+        "PREFIX owl:      <http://www.w3.org/2002/07/owl#>\n" +
+        "PREFIX dbpedia:  <http://dbpedia.org/ontology#>\n" +
+        "PREFIX :         <#>\n" +
+        "DESCRIBE ?x\n" +
+        "WHERE {\n" +
+            "?x owl:sameAs ?y\n" +
+        "}";
+
 
     public static void main(String[] args) {
         Model dataModel = ModelFactory.createDefaultModel();
         dataModel.read(DATA_URL, RDF_SYNTAX);
+        for (String url : CLASS_MEMBER_URLS) {
+            try {
+                dataModel.read(url, RDF_SYNTAX);
+            } catch (HttpException e) {
+                System.out.println("Problem with: " + url);
+            } catch (RiotException e) {
+                System.out.println("Problem with: " + url);
+            } catch (RuntimeIOException e) {
+                System.out.println("Problem with: " + url);
+            }
+        }
         Model schema = ModelFactory.createDefaultModel();
         schema.read(ONTOLOGY_URL, RDF_SYNTAX);
 
@@ -128,6 +162,15 @@ public class Main {
         // Model m = qe.execConstruct();
         // System.out.println("Result:");
         // m.write(System.out, RDF_SYNTAX);
+
+        System.out.println("9. DESCRIBING all the owl:sameAs triples across multiple resource endpoints.\n");
+        System.out.println(INTEGRATION_QUERY);
+        Query query = QueryFactory.create(INTEGRATION_QUERY);
+        QueryExecution qe = QueryExecutionFactory.create(query, inferenceModel);
+        Model m = qe.execDescribe();
+        System.out.println("Result:");
+        m.write(System.out, RDF_SYNTAX);
+
 
     }
 

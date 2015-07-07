@@ -1,0 +1,1181 @@
+@prefix :      <http://lyle.smu.edu/cse8340#> .
+@prefix film:  <http://data.linkedmdb.org/page/movie/film/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix foaf:  <http://xmlns.com/foaf/spec/> .
+@prefix frbr:  <http://purl.org/vocab/frbr/core#> .
+@prefix movie: <http://data.linkedmdb.org/resource/> .
+@prefix actor: <http://data.linkedmdb.org/resource/actor/> .
+@prefix director: <http://data.linkedmdb.org/directory/director/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix relationship: <http://purl.org/vocab/relationship/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:   <http://purl.org/vocab/bio/0.1/> .
+@prefix dir:   <http://data.linkedmdb.org/resource/director/> .
+@prefix r:     <http://purl.org/vocab/relationship/> .
+@prefix dbpedia: <http://dbpedia.org/ontology#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix geo_nm: <http://www.geonames.org/> .
+@prefix rel:   <http://purl.org/vocab/relationship/> .
+@prefix writer: <http://data.linkedmdb.org/resource/writer/> .
+@prefix skos:  <http://www.w3.org/TR/skos-reference#> .
+@prefix prod:  <http://data.linkedmdb.org/resource/producer/> .
+:alive  a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :alive .
+xsd:nonPositiveInteger
+        a                 rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        owl:disjointWith  xsd:duration , xsd:boolean , xsd:dateTime , xsd:string , xsd:float , xsd:date , xsd:time .
+foaf:title  a               rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:title .
+rdf:label  a                rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:label .
+xsd:gMonthDay  a  rdfs:Datatype , rdfs:Resource , rdfs:Class .
+foaf:Project  a              rdf:Property , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:comment         "The details of a project." ;
+        rdfs:domain          foaf:member , rdfs:Resource ;
+        rdfs:label           "Project Class" ;
+        rdfs:subClassOf      foaf:Project , rdfs:Resource , foaf:Agent ;
+        rdfs:subPropertyOf   foaf:Project ;
+        rdfs:type            :CSE8340ProjectNeeds ;
+        owl:equivalentClass  foaf:Project .
+owl:Restriction  a           rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      owl:Restriction , rdfs:Resource , owl:Class ;
+        owl:equivalentClass  owl:Restriction .
+rdf:nil  a      rdf:List , rdfs:Resource .
+<http://data.linkedmdb.org/resource/movie/initial_release_date>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/initial_release_date> .
+rel:SpouseOf  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:SpouseOf .
+:jimi   a           :Musician , owl:Thing , rdfs:Resource , foaf:Person ;
+        :alive      false ;
+        owl:sameAs  :johnnyHendrix , :jimi ;
+        foaf:name   "Jimi Hendrix" , "Johnny Allen Hendrix" .
+vcard:hasRegion  a          rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  vcard:hasRegion .
+<http://lyle.smu.edu/~coyle/cse8340#worksAt>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://lyle.smu.edu/~coyle/cse8340#worksAt> .
+xsd:gYearMonth  a  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+xsd:unsignedShort  a         rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:unsignedLong , xsd:unsignedInt , xsd:int , xsd:integer , xsd:long , xsd:short , xsd:nonNegativeInteger , xsd:unsignedShort ;
+        owl:disjointWith     xsd:date , xsd:dateTime , xsd:time , xsd:float , xsd:string , xsd:duration , xsd:boolean ;
+        owl:equivalentClass  xsd:unsignedShort .
+owl:disjointWith  a         owl:SymmetricProperty , owl:ObjectProperty , rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Class , rdfs:Resource , rdfs:Class ;
+        rdfs:range          owl:Class , rdfs:Resource , rdfs:Class ;
+        rdfs:subPropertyOf  owl:disjointWith .
+<http://lyle.smu.edu/~coyle/cse8340#include>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://lyle.smu.edu/~coyle/cse8340#include> .
+foaf:female  a              rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:female .
+foaf:name  a                rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:name .
+xsd:dateTime  a           rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        owl:disjointWith  xsd:unsignedShort , xsd:unsignedInt , xsd:byte , xsd:short , xsd:unsignedLong , xsd:nonPositiveInteger , xsd:long , xsd:time , xsd:float , xsd:int , xsd:string , xsd:nonNegativeInteger , xsd:duration , xsd:unsignedByte , xsd:date , xsd:integer , xsd:decimal , xsd:boolean .
+foaf:primaryTopic  a        rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:primaryTopic .
+:Musician  a                 rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      :Musician , rdfs:Resource , foaf:Person ;
+        owl:equivalentClass  :Musician .
+<http://data.linkedmdb.org/resource/movie/producer>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/producer> .
+owl:differentFrom  a        owl:SymmetricProperty , owl:ObjectProperty , rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:differentFrom .
+<http://data.linkedmdb.org/resource/movie/actor>
+        a                   rdf:Property , rdfs:Class , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/actor> .
+foaf:based_near  a          rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:based_near .
+rdf:_1  a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:_1 .
+xsd:unsignedInt  a           rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:unsignedLong , xsd:unsignedInt , xsd:int , xsd:integer , xsd:long , xsd:nonNegativeInteger ;
+        owl:disjointWith     xsd:dateTime , xsd:time , xsd:float , xsd:string , xsd:duration , xsd:date , xsd:boolean ;
+        owl:equivalentClass  xsd:unsignedInt .
+xsd:byte  a                  rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:int , xsd:integer , xsd:long , xsd:byte , xsd:short ;
+        owl:disjointWith     xsd:time , xsd:float , xsd:dateTime , xsd:string , xsd:duration , xsd:date , xsd:boolean ;
+        owl:equivalentClass  xsd:byte .
+foaf:admissionDate  a       rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:admissionDate .
+rel:wouldLikeToKnow  a      rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:wouldLikeToKnow .
+rdf:Seq  a               rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Container .
+:admission  a               rdf:Property , rdfs:Resource ;
+        rdfs:range          :university , rdfs:Resource ;
+        rdfs:subPropertyOf  :admission .
+rdfs:range  a               rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Property , rdfs:Resource ;
+        rdfs:range          rdfs:Class , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:range .
+owl:FunctionalProperty
+        a                rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdf:Property .
+rel:KnowsByReputation
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:KnowsByReputation .
+:actedIn  a                 rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :actedIn .
+owl:sameAs  a               owl:SymmetricProperty , rdf:Property , owl:ObjectProperty , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:sameAs .
+owl:backwardCompatibleWith
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Ontology , rdfs:Resource ;
+        rdfs:range          owl:Ontology , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:backwardCompatibleWith .
+xsd:anyURI  a   rdfs:Datatype , rdfs:Class , rdfs:Resource .
+xsd:positiveInteger  a  rdfs:Datatype , rdfs:Resource , rdfs:Class .
+:isParentOf  a              rdfs:Property , rdf:Property , rdfs:Resource ;
+        rdfs:domain         :Parent , rdfs:Resource , foaf:Person ;
+        rdfs:range          :Child , rdfs:Resource ;
+        rdfs:subPropertyOf  :isParentOf ;
+        owl:inverseOf       :isChildOf .
+xsd:double  a   rdfs:Datatype , rdfs:Class , rdfs:Resource .
+rdf:XMLLiteral  a  rdfs:Datatype , rdfs:Resource , rdfs:Class .
+xsd:gMonth  a   rdfs:Datatype , rdfs:Class , rdfs:Resource .
+foaf:firstName  a           rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:firstName .
+<http://data.linkedmdb.org/resource/movie/director>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/director> .
+xsd:string  a             rdfs:Datatype , rdfs:Resource , rdfs:Class , owl:Class ;
+        owl:disjointWith  xsd:unsignedByte , xsd:duration , xsd:unsignedShort , xsd:byte , xsd:dateTime , xsd:float , xsd:unsignedLong , xsd:time , xsd:short , xsd:long , xsd:int , xsd:unsignedInt , xsd:nonNegativeInteger , xsd:date , xsd:integer , xsd:decimal , xsd:boolean , xsd:nonPositiveInteger .
+:like   a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :like .
+rel:knowsOf  a                  rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf      rel:knowsByReputation , rel:knowsOf ;
+        owl:equivalentProperty  rel:knowsByReputation , rel:knowsOf .
+foaf:likes  a               rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:likes .
+rel:colleagueOf  a          rdf:Property , owl:SymmetricProperty , owl:ObjectProperty , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:colleagueOf .
+:likesJazzMusic  a          rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :likesJazzMusic .
+owl:equivalentClass  a      rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Class , rdfs:Resource , rdfs:Class ;
+        rdfs:range          owl:Class , rdfs:Resource , rdfs:Class ;
+        rdfs:subPropertyOf  owl:equivalentClass .
+xsd:nonNegativeInteger
+        a                    rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:integer , xsd:nonNegativeInteger ;
+        owl:disjointWith     xsd:float , xsd:time , xsd:dateTime , xsd:string , xsd:duration , xsd:date , xsd:boolean ;
+        owl:equivalentClass  xsd:nonNegativeInteger .
+owl:InverseFunctionalProperty
+        a                rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  owl:ObjectProperty .
+rdfs:Resource  a             rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      rdfs:Resource ;
+        owl:equivalentClass  rdfs:Resource .
+xsd:base64Binary  a  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+rdfs:subPropertyOf  a       rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Property , rdfs:Resource ;
+        rdfs:range          rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:subPropertyOf .
+<http://data.linkedmdb.org/resource/movie/country>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/country> .
+owl:OntologyProperty  a  rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdf:Property .
+foaf:familyName  a          rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:familyName .
+rdf:name  a                 rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:name .
+xsd:unsignedLong  a          rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:unsignedLong , xsd:integer , xsd:long , xsd:nonNegativeInteger ;
+        owl:disjointWith     xsd:date , xsd:time , xsd:float , xsd:dateTime , xsd:string , xsd:duration , xsd:boolean ;
+        owl:equivalentClass  xsd:unsignedLong .
+rdfs:domain  a              rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Property , rdfs:Resource ;
+        rdfs:range          rdfs:Class , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:domain .
+foaf:workplaceHomepage
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:workplaceHomepage .
+rdfs:ContainerMembershipProperty
+        a                rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdf:Property .
+rdfs:seeAlso  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:seeAlso .
+foaf:mbox  a                rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:mbox .
+rdf:subject  a              rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Statement , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:subject .
+rdfs:Datatype  a         rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Class .
+:occupation  a              rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :occupation .
+<http://www.uhura.com>
+        a                      owl:Thing , rdfs:Resource , foaf:Person ;
+        :actedIn               <http://data.linkedmdb.org/resource/film/267> ;
+        owl:sameAs             <http://www.uhura.com> , _:b0 ;
+        foaf:gender            "Female" ;
+        foaf:name              "Nichelle Nichols" ;
+        foaf:workInfoHomePage  actor:30341 .
+rel:closeFriendOf  a        rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:closeFriendOf .
+rel:mentorOf  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:mentorOf .
+:isChildOf  a               rdfs:Property , rdf:Property , rdfs:Resource ;
+        rdfs:domain         :Child , rdfs:Resource ;
+        rdfs:range          :Parent , rdfs:Resource , foaf:Person ;
+        rdfs:subPropertyOf  :isChildOf ;
+        owl:inverseOf       :isParentOf .
+xsd:time  a               rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        owl:disjointWith  xsd:dateTime , xsd:nonNegativeInteger , xsd:long , xsd:byte , xsd:unsignedShort , xsd:unsignedLong , xsd:float , xsd:int , xsd:string , xsd:unsignedInt , xsd:short , xsd:duration , xsd:unsignedByte , xsd:date , xsd:integer , xsd:decimal , xsd:boolean , xsd:nonPositiveInteger .
+rdf:List  a                  rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      rdf:List , rdfs:Resource ;
+        owl:equivalentClass  rdf:List .
+owl:imports  a              owl:OntologyProperty , rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Ontology , rdfs:Resource ;
+        rdfs:range          owl:Ontology , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:imports .
+foaf:Gender  a              rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:Gender .
+owl:TransitiveProperty
+        a                   rdf:Property , rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf     owl:ObjectProperty ;
+        rdfs:subPropertyOf  owl:TransitiveProperty .
+film:390  a         owl:Thing , rdfs:Resource ;
+        dc:title    "Bill & Ted's Excellent Adventure" ;
+        owl:sameAs  :billAndTed , film:390 .
+<http://purl.org/vocab/relationshipchildOf>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshipchildOf> .
+foaf:geekcode  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:geekcode .
+:Parent  a                   rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:comment         "A person who has children." ;
+        rdfs:subClassOf      :Parent , rdfs:Resource , foaf:Person ;
+        owl:equivalentClass  :Parent .
+owl:equivalentProperty
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:equivalentProperty .
+movie:director  a           rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  movie:director .
+dc:creator  a               rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  dc:creator .
+owl:ObjectProperty  a    rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdf:Property .
+:hasQualifications  a       rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :hasQualifications .
+rdf:Property  a              rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      rdf:Property , rdfs:Resource ;
+        owl:equivalentClass  rdf:Property .
+rdf:first  a                owl:FunctionalProperty , rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:List , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:first .
+rel:childOf  a              rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:childOf .
+rel:influencedBy  a         rdf:Property , owl:TransitiveProperty , owl:ObjectProperty , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:influencedBy .
+:isGoodPerson  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :isGoodPerson .
+foaf:member  a               rdfs:Class , rdf:Property , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      foaf:member , rdfs:Resource ;
+        rdfs:subPropertyOf   foaf:member ;
+        owl:equivalentClass  foaf:member .
+owl:oneOf  a                rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Class , rdfs:Resource , rdfs:Class ;
+        rdfs:subPropertyOf  owl:oneOf .
+rel:worksWith  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:worksWith .
+foaf:knows  a               rdf:Property , owl:SymmetricProperty , owl:ObjectProperty , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:knows .
+foaf:workInfoHomePage
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:workInfoHomePage .
+:johnnyHendrix  a   foaf:Person , owl:Thing , rdfs:Resource , :Musician ;
+        :alive      false ;
+        owl:sameAs  :johnnyHendrix , :jimi ;
+        foaf:name   "Johnny Allen Hendrix" , "Jimi Hendrix" .
+xsd:negativeInteger  a  rdfs:Datatype , rdfs:Resource , rdfs:Class .
+xsd:hexBinary  a  rdfs:Datatype , rdfs:Resource , rdfs:Class .
+rel:siblingOf  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:siblingOf .
+owl:priorVersion  a         rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Ontology , rdfs:Resource ;
+        rdfs:range          owl:Ontology , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:priorVersion .
+foaf:givenName  a           rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:givenName .
+film:43  a          owl:Thing , rdfs:Resource ;
+        dc:title    "2001: A Space Odyssey" ;
+        owl:sameAs  film:43 , :2001SO .
+foaf:nick  a                rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:nick .
+rel:EmployerOf  a           rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:EmployerOf .
+rel:CloseFriendOf  a        rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:CloseFriendOf .
+<http://data.linkedmdb.org/resource/movie/actor_actorid>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/actor_actorid> .
+rdf:workInfoHomePage  a     rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:workInfoHomePage .
+rdf:_2  a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:_2 .
+owl:intersectionOf  a       rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Class , rdfs:Resource , rdfs:Class ;
+        rdfs:subPropertyOf  owl:intersectionOf .
+owl:incompatibleWith  a     rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Ontology , rdfs:Resource ;
+        rdfs:range          owl:Ontology , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:incompatibleWith .
+:likes  a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :likes .
+rel:InfluencedBy  a         rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:InfluencedBy .
+owl:DatatypeProperty  a  rdfs:Resource , rdfs:Class ;
+        rdfs:subClassOf  rdf:Property .
+owl:Ontology  a              rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      owl:Ontology , rdfs:Resource ;
+        owl:equivalentClass  owl:Ontology .
+rel:AncestorOf  a           rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:AncestorOf .
+rel:employedBy  a           rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:employedBy .
+geo:lat  a                  rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  geo:lat .
+rdf:Alt  a               rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Container .
+xsd:gDay  a     rdfs:Datatype , rdfs:Class , rdfs:Resource .
+foaf:mbox_sha1sum  a        rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:mbox_sha1sum .
+<http://purl.org/vocab/relationshiphasMet>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshiphasMet> .
+rdf:type  a                 rdf:Property , rdfs:Resource ;
+        rdfs:range          rdfs:Class , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:type .
+foaf:gender  a              rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:gender .
+foaf:birthday  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:birthday .
+foaf:height  a              rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:height .
+foaf:person  a               rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      foaf:person , rdfs:Resource ;
+        owl:equivalentClass  foaf:person .
+:gpa    a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :gpa .
+xsd:unsignedByte  a          rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:unsignedLong , xsd:unsignedInt , xsd:int , xsd:integer , xsd:long , xsd:byte , xsd:short , xsd:unsignedByte , xsd:nonNegativeInteger , xsd:unsignedShort ;
+        owl:disjointWith     xsd:time , xsd:string , xsd:date , xsd:float , xsd:dateTime , xsd:duration , xsd:boolean ;
+        owl:equivalentClass  xsd:unsignedByte .
+:isSucessful  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :isSucessful .
+<http://purl.org/vocab/relationshipemployedBy>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshipemployedBy> .
+:Child  a                    rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      :Child , rdfs:Resource ;
+        owl:equivalentClass  :Child .
+<http://purl.org/vocab/relationshipspouseOf>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshipspouseOf> .
+:billAndTed  a      owl:Thing , rdfs:Resource ;
+        dc:title    "Bill & Ted's Excellent Adventure" ;
+        owl:sameAs  :billAndTed , film:390 .
+<http://data.linkedmdb.org/resource/movie/actor_name>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/actor_name> .
+bio:Marriage  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  bio:Marriage .
+rdfs:subClassOf  a          rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdfs:Class , rdfs:Resource ;
+        rdfs:range          rdfs:Class , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:subClassOf .
+foaf:birthdate  a           rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:birthdate .
+xsd:float  a              rdfs:Datatype , rdfs:Resource , rdfs:Class , owl:Class ;
+        owl:disjointWith  xsd:decimal , xsd:long , xsd:byte , xsd:unsignedShort , xsd:time , xsd:unsignedLong , xsd:dateTime , xsd:int , xsd:string , xsd:unsignedInt , xsd:short , xsd:nonNegativeInteger , xsd:duration , xsd:unsignedByte , xsd:date , xsd:integer , xsd:boolean , xsd:nonPositiveInteger .
+owl:inverseOf  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:inverseOf .
+owl:Thing  a                 rdfs:Class , owl:Class , rdfs:Resource ;
+        rdfs:subClassOf      rdfs:Resource , owl:Thing ;
+        owl:equivalentClass  owl:Thing .
+rdf:object  a               rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Statement , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:object .
+:loves  a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :loves .
+<http://purl.org/vocab/relationshipcolleagueOf>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshipcolleagueOf> .
+xsd:decimal  a            rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        owl:disjointWith  xsd:time , xsd:float , xsd:dateTime , xsd:string , xsd:duration , xsd:date , xsd:boolean .
+owl:SymmetricProperty
+        a                rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  owl:ObjectProperty .
+<http://purl.org/vocab/relationshipacquaintanceOf>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshipacquaintanceOf> .
+<http://purl.org/vocab/relationshipgrandchildOf>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshipgrandchildOf> .
+rel:collaboratesWith  a     rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:collaboratesWith .
+<http://lyle.smu.edu/~coyle/cse8340#likes>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://lyle.smu.edu/~coyle/cse8340#likes> .
+dc:date  a                  rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  dc:date .
+foaf:age  a                 rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:age .
+foaf:homepage  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:homepage .
+_:b0    a                      foaf:Person , owl:Thing , rdfs:Resource ;
+        :actedIn               <http://data.linkedmdb.org/resource/film/267> ;
+        owl:sameAs             _:b0 , <http://www.uhura.com> ;
+        foaf:gender            "Female" ;
+        foaf:name              "Nichelle Nichols" ;
+        foaf:workInfoHomePage  actor:30341 .
+<http://data.linkedmdb.org/resource/movie/runtime>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/runtime> .
+xsd:boolean  a            rdfs:Datatype , rdfs:Resource , rdfs:Class , owl:Class ;
+        owl:disjointWith  xsd:unsignedInt , xsd:string , xsd:decimal , xsd:long , xsd:float , xsd:integer , xsd:byte , xsd:time , xsd:unsignedShort , xsd:unsignedLong , xsd:dateTime , xsd:int , xsd:short , xsd:nonNegativeInteger , xsd:duration , xsd:unsignedByte , xsd:date , xsd:nonPositiveInteger .
+:university  a               rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      :university , rdfs:Resource ;
+        owl:equivalentClass  :university .
+foaf:made  a                rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:made .
+foaf:traveledUS  a          rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:traveledUS .
+rel:spouseOf  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:spouseOf .
+rel:ambivalentOf  a         rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:ambivalentOf .
+rdf:Bag  a               rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Container .
+rdfs:comment  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:comment .
+<http://purl.org/vocab/relationshipfriendOf>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshipfriendOf> .
+:weighs  a                  rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :weighs .
+rdfs:type  a                rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:type .
+:likefilms  a               rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :likefilms .
+:2001SO  a          owl:Thing , rdfs:Resource ;
+        dc:title    "2001: A Space Odyssey" ;
+        owl:sameAs  :2001SO , film:43 .
+rdf:predicate  a            rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Statement , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:predicate .
+foaf:lastName  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:lastName .
+xsd:long  a                  rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:integer , xsd:long ;
+        owl:disjointWith     xsd:string , xsd:time , xsd:float , xsd:dateTime , xsd:duration , xsd:date , xsd:boolean ;
+        owl:equivalentClass  xsd:long .
+:admire  a                  rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :admire .
+dc:title  a                 rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  dc:title .
+rel:parentOf  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:parentOf .
+foaf:pastProject  a         rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:pastProject .
+<http://data.linkedmdb.org/resource/movie/filmid>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://data.linkedmdb.org/resource/movie/filmid> .
+rel:GrandChildOf  a         rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:GrandChildOf .
+xsd:short  a                 rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:int , xsd:integer , xsd:long , xsd:short ;
+        owl:disjointWith     xsd:time , xsd:dateTime , xsd:string , xsd:duration , xsd:boolean , xsd:float , xsd:date ;
+        owl:equivalentClass  xsd:short .
+owl:versionInfo  a  owl:AnnotationProperty .
+geo:long  a                 rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  geo:long .
+foaf:admire  a              rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:admire .
+rdf:Statement  a             rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      rdf:Statement , rdfs:Resource ;
+        owl:equivalentClass  rdf:Statement .
+rel:WouldLikeToKnow  a      rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:WouldLikeToKnow .
+rel:friendOf  a             rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:friendOf .
+foaf:like  a                rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:like .
+rdfs:isDefinedBy  a         rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:seeAlso , rdfs:isDefinedBy .
+xsd:int  a                   rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:int , xsd:integer , xsd:long ;
+        owl:disjointWith     xsd:time , xsd:float , xsd:dateTime , xsd:boolean , xsd:string , xsd:duration , xsd:date ;
+        owl:equivalentClass  xsd:int .
+owl:onProperty  a           rdf:Property , rdfs:Resource ;
+        rdfs:domain         owl:Restriction , rdfs:Resource , owl:Class , rdfs:Class ;
+        rdfs:range          owl:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  owl:onProperty .
+<http://purl.org/vocab/relationshipsiblingOf>
+        a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  <http://purl.org/vocab/relationshipsiblingOf> .
+rdf:_3  a                   rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:_3 .
+:hasDistanceStudent  a      rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :course , :hasStudent , :hasDistanceStudent .
+foaf:homePage  a            rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:homePage .
+xsd:integer  a               rdfs:Datatype , rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      xsd:decimal , xsd:integer , rdfs:Resource ;
+        owl:disjointWith     xsd:time , xsd:float , xsd:dateTime , xsd:string , xsd:duration , xsd:date , xsd:boolean ;
+        owl:equivalentClass  xsd:integer .
+rel:knowsByReputation
+        a                       rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf      rel:knowsOf , rel:knowsByReputation ;
+        owl:equivalentProperty  rel:knowsByReputation , rel:knowsOf .
+owl:Class  a                 rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      owl:Class , rdfs:Resource , rdfs:Class ;
+        owl:equivalentClass  owl:Class .
+rel:GrandparentOf  a        rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:GrandparentOf .
+foaf:type  a                rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  foaf:type .
+xsd:date  a               rdfs:Datatype , rdfs:Resource , rdfs:Class , owl:Class ;
+        owl:disjointWith  xsd:unsignedInt , xsd:nonNegativeInteger , xsd:integer , xsd:short , xsd:float , xsd:time , xsd:string , xsd:long , xsd:byte , xsd:unsignedShort , xsd:unsignedLong , xsd:dateTime , xsd:int , xsd:duration , xsd:unsignedByte , xsd:decimal , xsd:boolean , xsd:nonPositiveInteger .
+owl:Property  a              rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      owl:Property , rdfs:Resource ;
+        owl:equivalentClass  owl:Property .
+rel:hasMet  a               rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:hasMet .
+rel:EmployedBy  a           rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rel:EmployedBy .
+:admires  a                 rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :admires .
+xsd:gYear  a    rdfs:Datatype , rdfs:Class , rdfs:Resource .
+xsd:duration  a           rdfs:Datatype , rdfs:Resource , rdfs:Class , owl:Class ;
+        owl:disjointWith  xsd:time , xsd:boolean , xsd:long , xsd:byte , xsd:unsignedShort , xsd:unsignedLong , xsd:float , xsd:dateTime , xsd:int , xsd:string , xsd:unsignedInt , xsd:short , xsd:nonNegativeInteger , xsd:unsignedByte , xsd:date , xsd:integer , xsd:decimal , xsd:nonPositiveInteger .
+rdfs:Literal  a              rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      rdfs:Literal , rdfs:Resource ;
+        owl:equivalentClass  rdfs:Literal .
+:hasOnCampusStudent  a      rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :course , :hasStudent , :hasOnCampusStudent .
+owl:Nothing  a               rdfs:Class , owl:Class , rdfs:Resource ;
+        rdfs:subClassOf      owl:Nothing , rdfs:Resource , owl:Thing ;
+        owl:equivalentClass  owl:Nothing .
+rdfs:Class  a                rdfs:Class , rdfs:Resource , owl:Class ;
+        rdfs:subClassOf      rdfs:Class , rdfs:Resource ;
+        owl:equivalentClass  rdfs:Class .
+rdf:rest  a                 owl:FunctionalProperty , rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:List , rdfs:Resource ;
+        rdfs:range          rdf:List , rdfs:Resource ;
+        rdfs:subPropertyOf  rdf:rest .
+rdfs:label  a               rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:label .
+:lecturer  a                rdf:Property , rdfs:Resource ;
+        rdfs:domain         foaf:person , rdfs:Resource ;
+        rdfs:subPropertyOf  :lecturer .
+:Brenda  a         foaf:Person ;
+        foaf:name  "Brenda Sattler" .
+_:b1    a       rdf:Bag , rdfs:Container ;
+        rdf:_1  actor:29615 ;
+        rdf:_2  :obama ;
+        rdf:_3  :modi .
+<http://lyle.smu.edu/~coyle/cse8340#pulpFiction>
+        dc:creator  <http://lyle.smu.edu/~coyle/cse8340#quenTarantino> ;
+        dc:title    "Pulp Fiction" .
+:shank  a                      foaf:Person ;
+        :likes                 <http://data.linkedmdb.org/resource/film/445> ;
+        :likesJazzMusic        true ;
+        :weighs                "185.0"^^xsd:double ;
+        rel:AncestorOf         _:b2 ;
+        rel:EmployedBy         [ a               foaf:Organization ;
+                                 rdf:name        "Alcatel-Lucent Enterprise" ;
+                                 rel:EmployerOf  :shank
+                               ] ;
+        rel:GrandparentOf      _:b2 ;
+        rel:KnowsByReputation  _:b3 ;
+        rel:SpouseOf           _:b4 ;
+        foaf:familyName        "Hanka" ;
+        foaf:geekcode          "Version: 3.20 GCS d+ s: a+++  C++ B+++ 7+ w L++  u+++ W+ H+ Z++ F+ PS++ PE- Y+ b++ DI+ e+++ h--- A+++" ;
+        foaf:gender            "Male" ;
+        foaf:givenName         "Stephen" ;
+        foaf:knows             _:b2 ;
+        foaf:mbox              <mailto:shanka@smu.edu> ;
+        foaf:member            [ a  foaf:Organization ] ;
+        foaf:name              "Steve Hanka" .
+:Sarala  foaf:type  foaf:Person .
+actor:29645  a           foaf:Person ;
+        rel:colleagueOf  actor:30727 ;
+        foaf:name        "Sean Connery" .
+dir:14972  foaf:made  <http://data.linkedmdb.org/resource/film/95581> , <http://data.linkedmdb.org/resource/film/39798> , <http://data.linkedmdb.org/resource/film/11774> ;
+        foaf:name  "Marc Lawrence" .
+<http://data.linkedmdb.org/resource/film/38117>
+        rdfs:label  "Miss Congeniality" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                actor:29661 .
+actor:32710  a           foaf:Person ;
+        rel:colleagueOf  actor:29661 ;
+        foaf:name        "Tim McGraw" .
+[ rdfs:comment   "#1 Telecommunications Infrastructure vendor in the world. #5 largest software company" ;
+  foaf:homepage  <http://www.ericsson.com/> ;
+  foaf:name      "Ericsson Inc"
+] .
+_:b3    a                     foaf:Person ;
+        rdf:workInfoHomePage  <https://richarddawkins.net/> ;
+        rdfs:comment          "Richard Dawkins, Biologist" ;
+        foaf:age              74 ;
+        foaf:name             "Richard Dawkins" .
+[ a             rdf:bag ;
+  rdf:_1        _:b5 ;
+  rdf:_2        _:b6 ;
+  rdf:_3        _:b7 ;
+  rdfs:comment  "Illustrates use of rdf:bag"
+] .
+<http://data.linkedmdb.org/resource/film/54361>
+        rdfs:label  "The Proposal" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                actor:29661 ;
+        <http://data.linkedmdb.org/resource/movie/director>
+                dir:12743 ;
+        <http://data.linkedmdb.org/resource/movie/filmid>
+                54361 ;
+        <http://data.linkedmdb.org/resource/movie/initial_release_date>
+                "2009-06-19"^^xsd:date .
+:bond   a                  foaf:Persom ;
+        :like              "butter" , "bread" ;
+        rel:CloseFriendOf  :sha ;
+        rel:InfluencedBy   :drc ;
+        rel:hasMet         :sha ;
+        foaf:age           "25" ;
+        foaf:name          "James Bond" .
+_:b8    a                <http://data.linkedmdb.org/resource/movie/film> ;
+        rdfs:label       "Night at the Museum: Battle of the Smithsonian" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                _:b9 ;
+        <http://data.linkedmdb.org/resource/movie/country>
+                <http://data.linkedmdb.org/resource/country/CA> ;
+        <http://data.linkedmdb.org/resource/movie/filmid>
+                57401 ;
+        dc:date          "2009-05-22"^^xsd:date ;
+        dc:title         "Night at the Museum: Battle of the Smithsonian" ;
+        foaf:based_near  <http://sws.geonames.org/6251999/> .
+_:b7    a                      foaf:Person ;
+        :actedIn               <http://data.linkedmdb.org/resource/film/445> ;
+        foaf:gender            "Female" ;
+        foaf:name              "Mercedes Ruehl" ;
+        foaf:workInfoHomePage  actor:33900 .
+:CSE8340  a          foaf:Project , rdfs:Resource , foaf:Agent ;
+        foaf:member  :bond , :sha , :shash ;
+        foaf:name    "ADV TOPICS IN SFTWR ENGRG - 0013" .
+<http://lyle.smu.edu/~coyle/cse8340#nelfed>
+        foaf:name  "Nel Fedorov" .
+[ a             rdf:seq ;
+  rdf:_1        _:b6 ;
+  rdf:_2        _:b7 ;
+  rdf:_3        _:b5 ;
+  rdfs:comment  "Fisher King Actors alphabetical order (last name sequence)"
+] .
+[ a              rdf:Statement , rdfs:Resource ;
+  rdf:object     _:b4 ;
+  rdf:predicate  rel:SpouseOf ;
+  rdf:subject    :shank
+] .
+:MarioGameHistory  a  rdf:Seq , rdfs:Container ;
+        rdf:_1  "Super Mario Bros." ;
+        rdf:_2  "Super Mario Bros. 3" ;
+        rdf:_3  "Super Mario World" .
+:chenz  a               foaf:person , rdfs:Resource ;
+        rdfs:seeAlso    <http://www.renren.com/254004359> ;
+        foaf:admire     :obm ;
+        foaf:age        24 ;
+        foaf:birthdate  "1991-03-09"^^xsd:date ;
+        foaf:height     "6.01"^^xsd:double ;
+        foaf:knows      :drc ;
+        foaf:likes      <http://data.linkedmdb.org/directory/film/1327> ;
+        foaf:mbox       <mailto:zhaoc@smu.edu> ;
+        foaf:name       "Chen Zhao" .
+actor:30317  a           foaf:Person ;
+        rel:colleagueOf  actor:30727 ;
+        foaf:name        "Eddie Izzard" .
+<http://lyle.smu.edu/~coyle/cse8340#richWagner>
+        foaf:name  "Richard Wagner" .
+:hasStudent  a              rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :course , :hasStudent .
+_:b2    a                 foaf:Person ;
+        :likes            "Spiderman" , "Iron Man" , "Peabody and Sherman" , "Avengers" ;
+        rel:GrandChildOf  :shank ;
+        foaf:age          9 ;
+        foaf:familyName   "Hanka" ;
+        foaf:gender       "Male" ;
+        foaf:givenName    "Reid" ;
+        foaf:knows        :shank ;
+        foaf:name         "Reid Hanka" .
+[ a             frbr:Work ;
+  rdfs:seeAlso  "http://www.selinathathapudi.com/About " ;
+  dc:creator    :sel ;
+  dc:title      "http://www.selinathathapudi.com"
+] .
+geo_nm:4736286  rdfs:label  "Texas" ;
+        vcard:hasRegion  geo_nm:4699066 , geo_nm:4684888 , geo_nm:4679195 .
+_:b6    a                      foaf:Person ;
+        :actedIn               <http://data.linkedmdb.org/resource/film/445> ;
+        foaf:gender            "Male" ;
+        foaf:name              "Jeff Bridges" ;
+        foaf:workInfoHomePage  actor:29891 .
+director:8476  a         foaf:Person ;
+        movie:director   :sk ;
+        foaf:familyName  "Kubrick" ;
+        foaf:givenName   "Stanley" .
+:shash  a                    foaf:Person ;
+        rdfs:type            foaf:person ;
+        :admission           :smu ;
+        :course              :CSE8340 ;
+        :hasDistanceStudent  :CSE8340 ;
+        :hasStudent          :CSE8340 ;
+        :likes               <http://data.linkedmdb.org/resource/film/54361> , <http://data.linkedmdb.org/resource/film/81099> , <http://data.linkedmdb.org/resource/film/39798> ;
+        :loves               "apple" , "banana" ;
+        rel:WouldLikeToKnow  :bond ;
+        rel:hasMet           :drc ;
+        foaf:admissionDate   "2014-9-22"^^xsd:date ;
+        foaf:age             "35" ;
+        foaf:knows           :drc ;
+        foaf:knows           [ foaf:knows  :shash ;
+                               foaf:like   "Glory" , "Vacation" ;
+                               foaf:name   "Sharath Maradi"
+                             ] ;
+        foaf:mbox            <mailto:stekula@smu.edu> ;
+        foaf:name            "Shashi Tekula" ;
+        foaf:nick            "Bobby" ;
+        foaf:pastProject     "Verizon Data Services" ;
+        foaf:traveledUS      true .
+actor:30060  a           foaf:Person ;
+        rel:colleagueOf  actor:30727 ;
+        foaf:name        "Uma Thurman" .
+:Sarah  a          foaf:Person ;
+        foaf:name  "Sarah Spears" .
+:Selina  a                      foaf:Person ;
+        :admire                 :Sarala ;
+        :gpa                    3.78 ;
+        :hasQualifications      [ a       rdf:Seq , rdfs:Container ;
+                                  rdf:_1  "Bachelors" ;
+                                  rdf:_2  "Masters"
+                                ] ;
+        :isGoodPerson           true ;
+        :likes                  _:b10 , _:b11 , _:b12 , _:b8 , _:b9 ;
+        <http://purl.org/vocab/relationshipacquaintanceOf>
+                [ a          foaf:Person ;
+                  foaf:name  "Alex Carson"
+                ] ;
+        <http://purl.org/vocab/relationshipchildOf>
+                [ a            foaf:Person ;
+                  foaf:Gender  "male" ;
+                  foaf:name    "Kumar Thathapudi"
+                ] ;
+        <http://purl.org/vocab/relationshipcolleagueOf>
+                :Andrew ;
+        <http://purl.org/vocab/relationshipemployedBy>
+                "Texas811" ;
+        <http://purl.org/vocab/relationshipfriendOf>
+                :Brenda ;
+        <http://purl.org/vocab/relationshipgrandchildOf>
+                :Sarala ;
+        <http://purl.org/vocab/relationshiphasMet>
+                [ a          foaf:Person ;
+                  foaf:name  "Dr. Suku Nair"
+                ] ;
+        <http://purl.org/vocab/relationshipsiblingOf>
+                [ a          foaf:Person ;
+                  foaf:name  "Dr. Moses Thathapudi"
+                ] ;
+        <http://purl.org/vocab/relationshipspouseOf>
+                [ a          foaf:Person ;
+                  foaf:name  "Susheel Bugulu"
+                ] ;
+        foaf:familyName         "Thathapudi" ;
+        foaf:givenName          "Selina Spurthy" ;
+        foaf:knows              :drc ;
+        foaf:mbox               <mailto:sthathapudi@smu.edu> ;
+        foaf:member             "SMU Graduate Student Community" ;
+        foaf:workplaceHomepage  <https://www.texas811.org> .
+:drc    a                foaf:Person , foaf:person , rdfs:Resource ;
+        :lecturer        :shash , :CSE8340 , :SemanticWebProgramming ;
+        rel:EmployedBy   "SMU" ;
+        rel:colleagueOf  :yongb ;
+        rel:mentorOf     :smaradi ;
+        foaf:homepage    <http://lyle.smu.edu/~coyle/> ;
+        foaf:knows       :shash , :rutu , :Selina , :smaradi , :she , :chenz ;
+        foaf:member      "SMU" , "SMU Faculty Community" ;
+        foaf:name        "Frank Coyle" , "Dr. Frank Coyle" .
+<http://lyle.smu.edu/cse8340>
+        rdfs:comment  "Meets all requirements for the fourth assignment" , "CSE 8340 Advanced Topics in Software Engineering" ;
+        rdfs:label    "Assignment 4 Semantic Web" , "CSE 8340" ;
+        rdfs:seeAlso  :foaf4 , :semanticWeb ;
+        dc:date       "2015-06-28"^^xsd:date , "2015-06-01"^^xsd:date .
+:MIT    a       foaf:Organization .
+:Google  a         foaf:Organization ;
+        foaf:name  "Google" .
+[ a           frbr:Work ;
+  dc:creator  :jimi , :johnnyHendrix ;
+  dc:title    "Castles Made of Sand"
+] .
+actor:29536  a           foaf:Person ;
+        foaf:familyName  "Reeves" ;
+        foaf:givenName   "Keanu" .
+<http://lyle.smu.edu/~coyle/cse8340#jossWhedon>
+        foaf:name  "Joss Whedon" .
+_:b12   a                <http://data.linkedmdb.org/resource/movie/film> ;
+        rdfs:label       "Enchanted" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                _:b9 , _:b11 ;
+        <http://data.linkedmdb.org/resource/movie/country>
+                <http://data.linkedmdb.org/resource/country/CA> ;
+        <http://data.linkedmdb.org/resource/movie/filmid>
+                7151 ;
+        dc:date          "2007-11-02" , "2007-11-21" ;
+        dc:title         "Enchanted" ;
+        foaf:based_near  <http://sws.geonames.org/6251999/> .
+actor:29615  a           foaf:Person ;
+        rel:colleagueOf  actor:30727 ;
+        foaf:name        "Patrick Macnee" .
+_:b4    a                foaf:Person ;
+        :likesJazzMusic  false ;
+        bio:Marriage     "1975-10-20"^^xsd:date ;
+        foaf:name        "Sok Sun" .
+:obm    a             foaf:person , rdfs:Resource ;
+        rdfs:seeAlso  <https://en.wikipedia.org/wiki/Barack_Obama> ;
+        foaf:name     "Barack Obama" ;
+        foaf:title    "44th U.S. President" .
+:MarioCharacters  a             rdf:Bag , rdfs:Container ;
+        rdf:_1                  "Mario" ;
+        rdf:_2                  "Luigi" ;
+        rdf:_3                  "Yoshi" ;
+        owl:TransitiveProperty  :MarioGames .
+<http://lyle.smu.edu/~coyle/cse8340#artfed>
+        rdfs:seeAlso      <https://www.facebook.com/TimFedorov> ;
+        <http://lyle.smu.edu/~coyle/cse8340#likes>
+                <http://lyle.smu.edu/~coyle/cse8340#timsFavMovies> , <http://lyle.smu.edu/~coyle/cse8340#dasRhein> , <http://lyle.smu.edu/~coyle/cse8340#voodooChild> ;
+        <http://lyle.smu.edu/~coyle/cse8340#worksAt>
+                <http://lyle.smu.edu/~coyle/cse8340#ericssoninc> ;
+        rel:childOf       "Serguei Fedorov" , "Nina Fedorova" ;
+        rel:friendOf      <http://lyle.smu.edu/~coyle/cse8340#edwardMcdaniel> , <http://lyle.smu.edu/~coyle/cse8340#adamGilbert> ;
+        rel:influencedBy  <http://lyle.smu.edu/~coyle/cse8340#billGates> ;
+        rel:siblingOf     "Ala Fedorova" ;
+        rel:spouseOf      <http://lyle.smu.edu/~coyle/cse8340#nelfed> ;
+        foaf:age          "29"^^<http://www.w3.org/2001/XMLSchema/#integer> ;
+        foaf:birthday     "1986-06-05"^^<http://www.w3.org/2001/XMLSchema/#date> ;
+        foaf:homepage     <https://www.linkedin.com/in/timfedorov> ;
+        foaf:mbox         <mailto:tfedorov@smu.edu> ;
+        foaf:name         "Artemii Fedorov" ;
+        foaf:nick         "Tim" ;
+        foaf:pastProject  "The Gigabit Transceiver" .
+<http://lyle.smu.edu/~coyle/cse8340#timsFavMovies>
+        <http://lyle.smu.edu/~coyle/cse8340#include>
+                <http://lyle.smu.edu/~coyle/cse8340#starTrekFC> , <http://lyle.smu.edu/~coyle/cse8340#avengers> , <http://lyle.smu.edu/~coyle/cse8340#pulpFiction> .
+_:b11   a           foaf:Person , <http://data.linkedmdb.org/resource/movie/actor> ;
+        rdfs:label  "Patrick Dempsey" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                _:b12 , _:b10 ;
+        <http://data.linkedmdb.org/resource/movie/actor_actorid>
+                33655 ;
+        <http://data.linkedmdb.org/resource/movie/actor_name>
+                "Patrick Dempsey" .
+:Shashi  a      foaf:Person ;
+        <http://purl.org/vocab/relationshipcolleagueOf>
+                :Sarah .
+:billGates  a   foaf:Person .
+prod:9762  <http://data.linkedmdb.org/resource/movie/producer>
+                <http://data.linkedmdb.org/resource/film/44512> , <http://data.linkedmdb.org/resource/film/39798> , <http://data.linkedmdb.org/resource/film/38117> , <http://data.linkedmdb.org/resource/film/2811> , <http://data.linkedmdb.org/resource/film/22534> .
+:rutu   a                 foaf:Person ;
+        :admire           :dad ;
+        rel:employedBy    []  ;
+        rel:friendOf      []  ;
+        rel:influencedBy  :billGates ;
+        foaf:birthday     "2015-07-10"^^xsd:date ;
+        foaf:firstName    "Rutuja " ;
+        foaf:knows        :drc ;
+        foaf:lastName     "Mandhare" ;
+        foaf:mbox         <mailto:rmandhare@smu.edu> ;
+        foaf:member       "MIT" ;
+        foaf:name         "Ruthuja" ;
+        foaf:nick         "Rutu" .
+:yongb  a                      foaf:Person ;
+        :likes                 :billAndTed , film:390 ;
+        rel:colleagueOf        :drc ;
+        rel:influencedBy       :drc ;
+        rel:knowsByReputation  actor:29536 , :jimi , :johnnyHendrix ;
+        rel:knowsOf            actor:29536 , :jimi , :johnnyHendrix ;
+        rel:wouldLikeToKnow    :jimi , :johnnyHendrix ;
+        foaf:age               39 ;
+        foaf:familyName        "Bakos" ;
+        foaf:givenName         "Yong" ;
+        foaf:knows             :z .
+<http://lyle.smu.edu/~coyle/cse8340#samuLJackson>
+        foaf:member  <http://lyle.smu.edu/~coyle/cse8340#pulpFiction> , <http://lyle.smu.edu/~coyle/cse8340#avengers> ;
+        foaf:name    "Samuel L. Jackson" .
+:admit  a                   rdf:Property , rdfs:Resource ;
+        rdfs:domain         foaf:person , rdfs:Resource ;
+        rdfs:subPropertyOf  :admit .
+<http://lyle.smu.edu/~coyle/cse8340#adamGilbert>
+        foaf:name  "Adam Gilbert" .
+:jia    a             foaf:Person ;
+        rdfs:seeAlso  <http://www.jia.com> ;
+        foaf:age      24 ;
+        foaf:female   true ;
+        foaf:name     "Hui Jiang" .
+actor:30707  a            foaf:Person ;
+        rel:ambivalentOf  actor:31460 ;
+        rel:colleagueOf   actor:29661 ;
+        foaf:name         "Hugh Grant" .
+<http://lyle.smu.edu/~coyle/cse8340#starTrekFC>
+        dc:title  "Star Trek: First Contact" .
+<http://lyle.smu.edu/~coyle/cse8340#jHendrix>
+        foaf:nick  "Buster" .
+geo_nm:4679195  rdfs:label  "Carrollton" .
+_:b9    a           foaf:Person , <http://data.linkedmdb.org/resource/movie/actor> ;
+        rdfs:label  "Amy Adams" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                _:b8 , _:b12 ;
+        <http://data.linkedmdb.org/resource/movie/actor_actorid>
+                1001 ;
+        <http://data.linkedmdb.org/resource/movie/actor_name>
+                "Amy Adams" .
+[ a           frbr:Work ;
+  dc:creator  :Google
+] .
+:z      a           foaf:Person ;
+        foaf:knows  :yongb .
+_:b10   a                <http://data.linkedmdb.org/resource/movie/film> ;
+        rdfs:comment     "Made of Honor is a nice movie " ;
+        rdfs:label       "Made of Honor" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                _:b11 ;
+        <http://data.linkedmdb.org/resource/movie/country>
+                <http://data.linkedmdb.org/resource/country/GB> ;
+        <http://data.linkedmdb.org/resource/movie/filmid>
+                23505 ;
+        dc:date          "2008-05-02"^^xsd:date ;
+        dc:title         "Made of Honor" ;
+        foaf:based_near  <http://sws.geonames.org/2635167/> .
+<http://data.linkedmdb.org/resource/film/1010>
+        rdfs:label  "Ice Station Zebra" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                actor:30562 ;
+        <http://data.linkedmdb.org/resource/movie/director>
+                dir:10190 ;
+        <http://data.linkedmdb.org/resource/movie/filmid>
+                54361 ;
+        <http://data.linkedmdb.org/resource/movie/initial_release_date>
+                "1968-10-23"^^xsd:date .
+:Andrew  a      foaf:Person ;
+        <http://purl.org/vocab/relationshipcolleagueOf>
+                :Sarah ;
+        <http://purl.org/vocab/relationshipemployedBy>
+                "Texas811" ;
+        <http://purl.org/vocab/relationshipfriendOf>
+                :Brenda .
+geo_nm:6252001  rdfs:label  "United States" ;
+        vcard:hasRegion  geo_nm:4736286 .
+dir:354  a               foaf:Person ;
+        rel:colleagueOf  actor:30727 ;
+        foaf:name        "Jeremiah S. Chechik" .
+actor:30727  a           foaf:Person ;
+        rel:colleagueOf  dir:354 , actor:30317 , actor:30060 , actor:29645 , actor:29615 ;
+        foaf:name        "Ralph Fiennes" .
+:mjhaveri  a                   foaf:Person ;
+        :likes                 film:43 , :2001SO ;
+        rel:hasMet             :hakeem ;
+        rel:influencedBy       :miyamoto ;
+        rel:knowsByReputation  :sk , director:8476 ;
+        rel:knowsOf            :sk , director:8476 ;
+        rel:wouldLikeToKnow    :sk , director:8476 ;
+        foaf:birthday          "1"^^xsd:gDay , "1"^^xsd:gMonth ;
+        foaf:familyName        "J" ;
+        foaf:givenName         "M" ;
+        foaf:knows             :hakeem ;
+        foaf:mbox_sha1sum      "9f9cf25b18a749abcf332fd0c90fc36d9e8ac48a" .
+:sha    :admission  :smu .
+[ a           frbr:Work ;
+  dc:creator  :drc ;
+  dc:title    "XML, Web Services, and the Data Revolution"
+] .
+actor:32661  a                foaf:Person ;
+        rel:collaboratesWith  actor:29661 ;
+        foaf:name             "Kathy Bates" .
+[ dc:title  "Google Search Engine" ] .
+:sn     a               foaf:Person ;
+        rel:employedBy  :microsoft ;
+        foaf:name       "Satya Nadella" .
+<http://lyle.smu.edu/~coyle/cse8340#billGates>
+        foaf:name  "Bill Gates" .
+:sam    a           foaf:Person ;
+        :likefilms  <http://data.linkedmdb.org/resource/film/1190> ;
+        foaf:age    24 ;
+        foaf:name   "Sampath Kumar" .
+:microsoft  a          foaf:Organisation ;
+        foaf:homepage  "https://www.microsoft.com/" ;
+        foaf:made      "500B revenue last year" .
+actor:30562  a     foaf:Person ;
+        foaf:name  "Rock Hudson" .
+:smaradi  a                    foaf:Person ;
+        :admires               :sn ;
+        rel:closeFriendOf      :sam ;
+        rel:employedBy         [ a             rdf:Seq , rdfs:Container ;
+                                 rdf:_1        :microsoft ;
+                                 rdf:_2        :oracle ;
+                                 rdf:_3        :facebook ;
+                                 rdfs:comment  " These are the list of companies smaradi worked for as per the sequence of the list"
+                               ] ;
+        rel:friendOf           [ a       rdf:Bag , rdfs:Container ;
+                                 rdf:_1  :rutu ;
+                                 rdf:_2  _:b13 ;
+                                 rdf:_3  "Mohammad"
+                               ] ;
+        rel:knowsByReputation  _:b1 ;
+        rel:knowsOf            _:b1 ;
+        rel:worksWith          _:b13 , :rutu ;
+        foaf:birthday          "2015-09-22"^^xsd:date ;
+        foaf:firstName         "Sharath Anurag" ;
+        foaf:knows             :drc , :she ;
+        foaf:lastName          "Maradi" ;
+        foaf:mbox              <mailto:smaradi@smu.edu> .
+[ a           frbr:Work ;
+  dc:creator  _:b3 ;
+  dc:title    "The Selfish Gene"
+] .
+:shas   :course              :CSE8340 ;
+        :hasOnCampusStudent  :CSE8340 ;
+        :hasStudent          :CSE8340 .
+<http://lyle.smu.edu/~coyle/cse8340#quenTarantino>
+        foaf:name  "Quentin Tarantino" .
+_:b5    a                      foaf:Person ;
+        :actedIn               <http://data.linkedmdb.org/resource/film/445> ;
+        foaf:gender            "Male" ;
+        foaf:name              "Robin Williams" ;
+        foaf:workInfoHomePage  actor:29857 .
+<http://lyle.smu.edu/~coyle/cse8340#voodooChild>
+        dc:creator  <http://lyle.smu.edu/~coyle/cse8340#jHendrix> ;
+        dc:title    "Voodoo Child" .
+<http://data.linkedmdb.org/directory/film/1327>
+        a           <http://data.linkedmdb.org/resource/movie/film> ;
+        rdfs:label  "Mission: Impossible" ;
+        <http://data.linkedmdb.org/resource/movie/director>
+                dir:8382 .
+<http://data.linkedmdb.org/resource/film/81099>
+        rdfs:label  "The Blind Side" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                actor:32710 , actor:32661 , actor:29661 ;
+        <http://data.linkedmdb.org/resource/movie/director>
+                dir:2512 .
+<http://lyle.smu.edu/~coyle/cse8340#dasRhein>
+        dc:creator  <http://lyle.smu.edu/~coyle/cse8340#richWagner> ;
+        dc:title    "Das Rheingold" .
+actor:29661  a           foaf:Person ;
+        rel:colleagueOf  actor:32710 , actor:30707 ;
+        rel:worksWith    dir:2512 ;
+        foaf:knows       :she ;
+        foaf:name        "Sandra Bullock" .
+:dad    a             foaf:Person ;
+        :occupation   "Government Officer" ;
+        rel:parentOf  :rutu ;
+        foaf:name     "SunilGandhre" .
+geo_nm:4684888  rdfs:label  "Dallas" .
+:smu    a          rdfs:Resource , :university ;
+        rdfs:type  :university .
+<http://lyle.smu.edu/~coyle/cse8340#edwardMcdaniel>
+        foaf:age  32 .
+:facebook  a          foaf:Organization , rdfs:Resource , foaf:member ;
+        foaf:Project  "Social Netwoking" .
+<http://data.linkedmdb.org/resource/film/1190>
+        rdfs:label    "The Avengers" ;
+        rdfs:seeAlso  <http://data.linkedmdb.org/resource/film/1190> ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                actor:29645 , actor:30727 , actor:30317 , actor:29615 , actor:30060 ;
+        <http://data.linkedmdb.org/resource/movie/director>
+                dir:354 ;
+        <http://data.linkedmdb.org/resource/movie/runtime>
+                89 ;
+        :isSucessful  true .
+:SemanticWebProgramming
+        a          foaf:Project , foaf:Agent , rdfs:Resource ;
+        foaf:name  "ADV TOPICS IN SFTWR ENGRG - 0013" .
+<http://lyle.smu.edu/~coyle/cse8340#avengers>
+        dc:creator  <http://lyle.smu.edu/~coyle/cse8340#jossWhedon> ;
+        dc:title    "The Avengers" .
+geo_nm:4699066  rdfs:label  "Houston" .
+dir:10190  foaf:name  "John Sturges" .
+_:b13   a          foaf:Person ;
+        foaf:name  "Shashi" .
+:oracle  a                 foaf:Oraganization ;
+        rdf:label          "Oracle India Ltd" ;
+        foaf:homePage      "http://http://www.oracle.com/" ;
+        foaf:primaryTopic  "Financial Sector" .
+:she    a                foaf:Person ;
+        :admire          [ a          foaf:Person ;
+                           foaf:name  "Helen Keller"
+                         ] ;
+        :likes           <http://data.linkedmdb.org/resource/film/81099> , <http://data.linkedmdb.org/resource/film/54361> , <http://data.linkedmdb.org/resource/film/39798> ;
+        rel:employedBy   [ a                  foaf:Organization ;
+                           rdfs:comment       "2015 Fortune 500: No. 11 ranking" ;
+                           rdfs:seeAlso       <http://fortune.com/fortune500/> ;
+                           foaf:based_near    geo_nm:4679195 ;
+                           foaf:homepage      <http://mckesson.com> ;
+                           foaf:made          "179B Revenue last year" ;
+                           foaf:name          "McKesson Corporation" ;
+                           foaf:primaryTopic  "HealthCare Service Provider"
+                         ] ;
+        foaf:based_near  geo_nm:4684888 ;
+        foaf:birthday    "05-06" ;
+        foaf:knows       actor:29661 , :drc , :smaradi ;
+        foaf:mbox        <mailto:lincoln@smu.edu> ;
+        foaf:name        "Sheila Lincoln" .
+:sashi  a          foaf:Person ;
+        foaf:mbox  <http://data.linkedmdb.org/resource/stekula@smu.edu> ;
+        foaf:name  "Sashi Tekula" ;
+        foaf:nick  "Bobby" .
+<http://data.linkedmdb.org/resource/film/39798>
+        rdfs:label       "Two Weeks Notice" ;
+        <http://data.linkedmdb.org/resource/movie/actor>
+                actor:30707 , actor:29661 ;
+        <http://data.linkedmdb.org/resource/movie/director>
+                dir:14972 ;
+        foaf:based_near  [ geo:lat   35.3080 ;
+                           geo:long  149.1245
+                         ] .
+:numberOfChildren  a        rdfs:Property , rdf:Property , rdfs:Resource ;
+        rdfs:domain         :Parent , rdfs:Resource , foaf:Person ;
+        rdfs:range          xsd:integer , xsd:decimal , rdfs:Resource ;
+        rdfs:subPropertyOf  :numberOfChildren .
+dbpedia:birthPlace  a       owl:FunctionalProperty , rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  dbpedia:birthPlace .
+:numberOfBoys  a            rdfs:Property , rdf:Property , rdfs:Resource ;
+        rdfs:domain         :Parent , rdfs:Resource , foaf:Person ;
+        rdfs:range          xsd:decimal , xsd:integer , rdfs:Resource ;
+        rdfs:subPropertyOf  :numberOfChildren , :numberOfBoys .
+:broke  a              rdf:Statement , rdfs:Resource ;
+        rdf:object     0.2 ;
+        rdf:predicate  :income ;
+        rdf:subject    :yongb .
+:course  a                  rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  :course .
+foaf:Person  a  rdfs:Class , rdfs:Resource .
+rdfs:Container  a  rdfs:Class , rdfs:Resource .
+foaf:Agent  a   rdfs:Class , rdfs:Resource .
+:hakeem  foaf:knows  :mjhaveri .
+owl:AnnotationProperty
+        a       rdfs:Class , rdfs:Resource .
+<http://data.linkedmdb.org/resource/movie/film>
+        a       rdfs:Class , rdfs:Resource .
+frbr:Work  a    rdfs:Class , rdfs:Resource .
+foaf:Persom  a  rdfs:Class , rdfs:Resource .
+rdf:seq  a      rdfs:Class , rdfs:Resource .
+foaf:Organisation  a  rdfs:Class , rdfs:Resource .
+foaf:Organization  a  rdfs:Class , rdfs:Resource .
+foaf:Oraganization  a  rdfs:Class , rdfs:Resource .
+rdf:bag  a      rdfs:Class , rdfs:Resource .
+rdfs:Property  a  rdfs:Class , rdfs:Resource .
+
+BUILD SUCCESSFUL
+Total time: 8 seconds
